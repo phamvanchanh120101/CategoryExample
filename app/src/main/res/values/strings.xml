@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CategoryExample</string>
+    <string name="select_items">Select item(s)</string>
+    <string name="please_select_category">Please select a category to show items.</string>
+</resources>

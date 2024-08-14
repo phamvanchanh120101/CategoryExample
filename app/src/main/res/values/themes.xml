@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CategoryExample" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:fontFamily">@font/segoe_ui</item>
+    </style>
+
+    <style name="Theme.CategoryExample" parent="Base.Theme.CategoryExample" >
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+</resources>

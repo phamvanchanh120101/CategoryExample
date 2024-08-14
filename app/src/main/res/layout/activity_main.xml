@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.example.categoryexample.ui.component.BindingAdapterKt"/>
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="com.example.categoryexample.ui.viewmodel.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@{viewModel.kioskConfig.homeScreenBackground}"
+        android:fitsSystemWindows="true">
+
+
+        <LinearLayout
+            android:id="@+id/ownerTextLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/ownerTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/segoe_ui_regular"
+                android:text="@{viewModel.kioskConfig.ownerText}"
+                android:textColor="@color/grey7A7A7A"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/currentTimeTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/segoe_ui_regular"
+                android:gravity="end"
+                android:text="01:59 19/08/2024"
+                android:textColor="@color/grey7A7A7A"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/avatar"
+                    tools:ignore="VisualLintBounds"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/segoe_ui_regular"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    android:text="Hello someone@something.com" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/categoryTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoe_ui_regular"
+                    android:textSize="40sp"
+                    android:textColor="@color/black"
+                    android:text="Category" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCategories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="14dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/category_item" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/modelTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoe_ui_regular"
+                    android:text="Model"
+                    android:textColor="@color/black"
+                    android:textSize="40sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="14dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/categoryTxtRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoe_ui_regular"
+                        android:textSize="24sp"
+                        android:textColor="@color/black"
+                        android:visibility="@{viewModel.selectedCategory.isEmpty() ? View.VISIBLE : View.GONE}"
+                        android:text="@string/please_select_category" />
+
+                    <TextView
+                        android:id="@+id/categoryTxtBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoe_ui_semibold"
+                        android:textSize="24sp"
+                        android:textColor="@color/black"
+                        android:visibility="@{viewModel.selectedCategory.isEmpty() ? View.GONE : View.VISIBLE}"
+                        android:text="@string/select_items"
+                        tools:visibility="gone"
+                    />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvModels"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="false"
+                        android:orientation="vertical"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/model_item" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- RecyclerView cho danh sách Model -->
+
+    </LinearLayout>
+</layout>
