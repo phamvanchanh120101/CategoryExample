@@ -18,7 +18,7 @@
         android:paddingVertical="16dp"
         android:paddingHorizontal="20dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/rounded_model_item_background"
+        android:background="@drawable/bg_ractangle_rounded"
 >
 
         <ImageView

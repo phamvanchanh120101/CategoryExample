@@ -1,6 +1,12 @@
 package com.example.categoryexample.ui
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.KeyEvent
+import android.view.View
+import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +31,13 @@ import org.kodein.di.direct
 import org.kodein.di.instance
 
 class MainActivity : AppCompatActivity(), DIAware {
+
+//    private lateinit var editTextBarcode: EditText
+//    private lateinit var textViewResult: TextView
+
+//    private val scannedData = StringBuilder()
+
+
 
     override val di by closestDI()
     private val mainViewModelFactory: MainViewModelFactory
@@ -63,5 +76,65 @@ class MainActivity : AppCompatActivity(), DIAware {
             modelAdapter.update(models.map { ModelItem(it) })
         }
 
+//        editTextBarcode = findViewById(R.id.editTextBarcode)
+//        textViewResult = findViewById(R.id.textViewResult)
+
+
+//        // Cài đặt lắng nghe sự kiện phím
+//        findViewById<View>(android.R.id.content).setOnKeyListener { view, keyCode, event ->
+//            if (event.action == KeyEvent.ACTION_DOWN) {
+//                val pressedKey = event.unicodeChar.toChar()
+//                if (keyCode == KeyEvent.KEYCODE_ENTER) {
+//                    processScannedData()
+//                } else {
+//                    println("BARCODE :: ${scannedData}")
+//
+//                    scannedData.append(pressedKey)
+//                    textViewResult.text = scannedData.toString()
+//                }
+//                true
+//            } else {
+//                false
+//            }
+//        }
+
+
+//
+//        editTextBarcode.requestFocus()
+//
+//        // Lắng nghe sự kiện thay đổi văn bản trong EditText
+//        editTextBarcode.addTextChangedListener(object : TextWatcher {
+//            override fun afterTextChanged(s: Editable?) {
+//                val barcodeData = s.toString() // Lấy dữ liệu từ EditText
+//                textViewResult.text = "Dữ liệu mã vạch/mã QR: $barcodeData"
+//            }
+//
+//            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+//            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+//        })
+
     }
+
+//    override fun onKeyUp(keyCode: Int, event: KeyEvent?): Boolean {
+//        if (event?.action == KeyEvent.ACTION_UP) {
+//            val pressedKey = event.unicodeChar.toChar()
+//            if (keyCode == KeyEvent.KEYCODE_ENTER) {
+//                processScannedData()
+//            } else {
+//                println("BARCODE :: ${scannedData}")
+//
+//                scannedData.append(pressedKey)
+//                textViewResult.text = scannedData.toString()
+//            }
+//            return true
+//        }
+//        return super.onKeyUp(keyCode, event)
+//    }
+
+//    private fun processScannedData() {
+//        println("BARCODE :: ${scannedData}")
+//
+//        textViewResult.text = "Dữ liệu quét: ${scannedData.toString()}"
+//        scannedData.clear()
+//    }
 }

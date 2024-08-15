@@ -53,7 +53,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:orientation="vertical">
@@ -74,14 +74,14 @@
 
                 <TextView
                     android:id="@+id/textView3"
-                    android:layout_marginStart="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:gravity="center_vertical"
+                    android:layout_marginStart="10dp"
                     android:fontFamily="@font/segoe_ui_regular"
-                    android:textSize="30sp"
+                    android:gravity="center_vertical"
+                    android:text="Hello someone@something.com"
                     android:textColor="@color/black"
-                    android:text="Hello someone@something.com" />
+                    android:textSize="30sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -95,20 +95,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/segoe_ui_regular"
-                    android:textSize="40sp"
+                    android:text="Category"
                     android:textColor="@color/black"
-                    android:text="Category" />
+                    android:textSize="40sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvCategories"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="14dp"
                     android:clipToPadding="false"
                     android:orientation="horizontal"
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp"
-                    android:layout_marginTop="14dp"
-                    android:layout_marginBottom="14dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/category_item" />
             </LinearLayout>
@@ -138,22 +138,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/segoe_ui_regular"
-                        android:textSize="24sp"
+                        android:text="@string/please_select_category"
                         android:textColor="@color/black"
-                        android:visibility="@{viewModel.selectedCategory.isEmpty() ? View.VISIBLE : View.GONE}"
-                        android:text="@string/please_select_category" />
+                        android:textSize="24sp"
+                        android:visibility="@{viewModel.selectedCategory.isEmpty() ? View.VISIBLE : View.GONE}" />
 
                     <TextView
                         android:id="@+id/categoryTxtBold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/segoe_ui_semibold"
-                        android:textSize="24sp"
-                        android:textColor="@color/black"
-                        android:visibility="@{viewModel.selectedCategory.isEmpty() ? View.GONE : View.VISIBLE}"
                         android:text="@string/select_items"
-                        tools:visibility="gone"
-                    />
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:visibility="@{viewModel.selectedCategory.isEmpty() ? View.GONE : View.VISIBLE}"
+                        tools:visibility="gone" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvModels"
@@ -172,6 +171,40 @@
 
 
         <!-- RecyclerView cho danh sách Model -->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="16dp">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Quét mã vạch/mã QR:"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/editTextBarcode"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="thiết bị đọc mã vào đây"-->
+<!--                android:inputType="text"-->
+<!--                android:focusable="true" />-->
+
+<!--            />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/textViewResult"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+
+<!--                android:text="Kết  quả sẽ hiển thị ở đây"-->
+<!--                android:textSize="16sp" />-->
+
+<!--        </LinearLayout>-->
 
     </LinearLayout>
 </layout>
