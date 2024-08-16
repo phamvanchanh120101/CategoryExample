@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
+    <data>  
+        <variable
+            name="itemReturn"
+            type="com.example.categoryexample.domain.model.ItemReturnModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,9 +55,10 @@
                 android:fontFamily="@font/segoe_ui_semibold"
                 android:letterSpacing="0.05"
                 android:padding="10dp"
-                android:text="0003123123123"
+                android:text="@{itemReturn.serialNumber}"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:text="00032021003232"/>
         </LinearLayout>
 
         <LinearLayout
@@ -86,7 +90,8 @@
                 android:fontFamily="@font/segoe_ui_semibold"
                 android:letterSpacing="0.05"
                 android:padding="10dp"
-                android:text="SSD 480GB Sandisk E30"
+                android:text="@{itemReturn.modelName}"
+                tools:text="SSD 480GB Sandisk E30"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -120,7 +125,8 @@
                 android:fontFamily="@font/segoe_ui_semibold"
                 android:letterSpacing="0.05"
                 android:padding="10dp"
-                android:text="HARD DISK"
+                android:text="@{itemReturn.categoryName}"
+                tools:text="HARD DISK"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -154,7 +160,8 @@
                 android:fontFamily="@font/segoe_ui_semibold"
                 android:letterSpacing="0.05"
                 android:padding="10dp"
-                android:text="example_123@sample.com"
+                android:text="@{itemReturn.loaneeEmail}"
+                tools:text="example_123@sample.com"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
         </LinearLayout>
