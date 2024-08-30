@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.categoryexample.KioskModeHelper
 import com.example.categoryexample.databinding.ActivityTestBinding
 import com.roco.api.weigenRelay.weigenRelay
 
@@ -26,142 +27,73 @@ class TestActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnOpenGreenLight.setOnClickListener{
-            val intent = Intent().apply {
-                action = "com.custom.green.light.open"
-                addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            }
-            applicationContext.sendBroadcast(intent)
+            KioskModeHelper.sendCommand(this, KioskModeHelper.Action.OPEN_GREEN_LIGHT)
         }
 
         binding.btnCloseGreenLight.setOnClickListener{
-            val intent = Intent()
-            intent.setAction("com.custom.green.light.close")
-            intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            applicationContext.sendBroadcast(intent)
-
+            KioskModeHelper.sendCommand(this, KioskModeHelper.Action.CLOSE_GREEN_LIGHT)
         }
-
-        //open RedInfre light
-        binding.btnOpenRedInfreLight.setOnClickListener {
-            val intent = Intent().apply {
-                action = "com.custom.red_infre.light.open"
-                addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            }
-            applicationContext.sendBroadcast(intent)
-        }
-
-
-        //close RedInfre light
-        binding.btnCloseRedInfreLight.setOnClickListener{
-            val intent = Intent()
-            intent.setAction("com.custom.red_infre.light.close")
-            intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            applicationContext.sendBroadcast(intent)
-        }
-
 
         //open white light
         binding.btnOpenWhiteLight.setOnClickListener {
-            val intent = Intent().apply {
-                action = "com.custom.white.light.open"
-                addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            }
-            applicationContext.sendBroadcast(intent)
+            KioskModeHelper.sendCommand(this, KioskModeHelper.Action.OPEN_WHITE_LIGHT)
         }
 
 
         //close white light
         binding.btnCloseWhiteLight.setOnClickListener{
-            val intent = Intent()
-            intent.setAction("com.custom.white.light.close")
-            intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            applicationContext.sendBroadcast(intent)
+            KioskModeHelper.sendCommand(this, KioskModeHelper.Action.CLOSE_WHITE_LIGHT)
         }
 
         //open red light
         binding.btnOpenRedLight.setOnClickListener {
-            val intent = Intent().apply {
-                action = "com.custom.red.light.open"
-                addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            }
-            applicationContext.sendBroadcast(intent)
+            KioskModeHelper.sendCommand(this, KioskModeHelper.Action.OPEN_RED_LIGHT)
         }
 
 
         //close red light
         binding.btnCloseRedLight.setOnClickListener{
-            val intent = Intent()
-            intent.setAction("com.custom.red.light.close")
-            intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            applicationContext.sendBroadcast(intent)
+            KioskModeHelper.sendCommand(this, KioskModeHelper.Action.CLOSE_RED_LIGHT)
         }
 
         //open relay
         binding.btnOpenRelay.setOnClickListener {
-            val intent = Intent().apply {
-                action = "com.custom.relay.open"
-                addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            }
-            applicationContext.sendBroadcast(intent)
+            KioskModeHelper.sendCommand(this, KioskModeHelper.Action.OPEN_RELAY)
         }
 
         //close relay
         binding.btnCloseRelay.setOnClickListener{
-            val intent = Intent()
-            intent.setAction("com.custom.relay.close")
-            intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            applicationContext.sendBroadcast(intent)
+            KioskModeHelper.sendCommand(this, KioskModeHelper.Action.CLOSE_RELAY)
         }
 
         //open status bar
         binding.btnOpenStatusBar.setOnClickListener {
-            val intent = Intent().apply {
-                action = "com.custom.open.statubar"
-                addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            }
-            applicationContext.sendBroadcast(intent)
+            KioskModeHelper.sendCommand(this, KioskModeHelper.Action.OPEN_STATUS_BAR)
         }
 
         //close status bar
         binding.btnCloseStatusBar.setOnClickListener{
-            val intent = Intent()
-            intent.setAction("com.custom.close.statubar")
-            intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            applicationContext.sendBroadcast(intent)
+            KioskModeHelper.sendCommand(this, KioskModeHelper.Action.CLOSE_STATUS_BAR)
         }
 
         //open show navigation bar
         binding.btnShowNavigationbar.setOnClickListener {
-            val intent = Intent().apply {
-                action = "com.custom.show_navigationbar"
-                addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            }
-            applicationContext.sendBroadcast(intent)
+            KioskModeHelper.sendCommand(this, KioskModeHelper.Action.SHOW_NAVIGATION_BAR)
         }
 
         //close hide navigation bar
         binding.btnHideNavigationbar.setOnClickListener{
-            val intent = Intent()
-            intent.setAction("com.custom.hide_navigationbar")
-            intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            applicationContext.sendBroadcast(intent)
+            KioskModeHelper.sendCommand(this, KioskModeHelper.Action.HIDE_NAVIGATION_BAR)
         }
 
         //open show status bar
         binding.btnShowStatusbar.setOnClickListener {
-            val intent = Intent().apply {
-                action = "roco.systemui.show_statusbar"
-                addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            }
-            applicationContext.sendBroadcast(intent)
+            KioskModeHelper.sendCommand(this, KioskModeHelper.Action.SHOW_STATUS_BAR)
         }
 
         //close hide status bar
         binding.btnHideStatusbar.setOnClickListener{
-            val intent = Intent()
-            intent.setAction("roco.systemui.hide_statusbar")
-            intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-            applicationContext.sendBroadcast(intent)
+            KioskModeHelper.sendCommand(this, KioskModeHelper.Action.HIDE_STATUS_BAR)
         }
 
         binding.btnSetGpioDirIn22.setOnClickListener {
