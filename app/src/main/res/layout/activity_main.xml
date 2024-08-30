@@ -141,7 +141,8 @@
                         android:text="@string/please_select_category"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:visibility="@{viewModel.selectedCategory.isEmpty() ? View.VISIBLE : View.GONE}" />
+                        android:visibility="@{viewModel.selectedCategory.isEmpty() ? View.VISIBLE : View.GONE}"
+                        tools:visibility="gone"/>
 
                     <TextView
                         android:id="@+id/categoryTxtBold"
@@ -152,7 +153,7 @@
                         android:textColor="@color/black"
                         android:textSize="24sp"
                         android:visibility="@{viewModel.selectedCategory.isEmpty() ? View.GONE : View.VISIBLE}"
-                        tools:visibility="gone" />
+                        tools:visibility="visible" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvModels"
