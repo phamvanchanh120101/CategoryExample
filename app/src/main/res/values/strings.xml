@@ -2,4 +2,6 @@
     <string name="app_name">CategoryExample</string>
     <string name="select_items">Select item(s)</string>
     <string name="please_select_category">Please select a category to show items.</string>
+    <string name="channel_name">Smart Locker Channel</string>
+    <string name="channel_description">Notifications for SmartLocker service</string>
 </resources>
