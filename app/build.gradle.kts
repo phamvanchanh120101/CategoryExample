@@ -18,6 +18,12 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    externalNativeBuild {
+        ndkBuild {
+            path("src/main/jni/Android.mk")
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
